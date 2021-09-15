@@ -114,7 +114,7 @@ var_dump($perso1);
 // $gb = new Gestionnaire_BD('testhydra');
 // $db = gb->getPDO();
 
-
+$db = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
 
 // $pdo = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
 // // die(var_dump(PDO::ATTR_ERRMODE));
