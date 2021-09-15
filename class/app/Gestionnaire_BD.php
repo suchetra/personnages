@@ -42,12 +42,12 @@
 
 
 // on fait ça pour éviter de le confondre si on inclut d'autres librairies plus tard
-namespace App;
+// namespace App;
 
 // 16:16
-use \PDO;
+// use \PDO;
 
-class Personnage_BD{
+class Gestionnaire_BD{
 
     private $db_name;
     private $db_user;
@@ -63,10 +63,10 @@ class Personnage_BD{
         $this->db_host = $db_host;
     }
 
-    private function getPDO(){
+    public function getPDO(){
         // on fait un if pour vérifier que $pdo est nul pour eviter que la fonction query se connecte plus d'une fois à la BDD
         if($this->pdo === null){
-            $pdo = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
+            $pdo = new PDO('mysql:dbname='. $this->db_name . ';host=localhost', 'nico', 'nico');
             // die(var_dump(PDO::ATTR_ERRMODE));
             // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERREMODE_EXCEPTION);
             $this->pdo = $pdo;
@@ -78,11 +78,11 @@ class Personnage_BD{
 
     }
 
-    public function query($statement){
-        $req = $this->getPDO()->query($statement);
-        $datas = $req->fetchAll(PDO::FETCH_OBJ);
-        return $datas;
-    }
+    // public function query($statement){
+    //     $req = $this->getPDO()->query($statement);
+    //     $datas = $req->fetchAll(PDO::FETCH_OBJ);
+    //     return $datas;
+    // }
 
 
 }
