@@ -13,4 +13,4 @@ $cM = new CommentaireManager($db);
 
 // var_dump($pM->getList());
 
-var_dump($cM->getCommentaire(2));
+var_dump($cM->getCommentaire(3));

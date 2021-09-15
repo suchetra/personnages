@@ -34,8 +34,8 @@ class CommentaireManager
     
     public function getCommentaire($id){
         $commentaires = [];
-        // $reqSQL='SELECT titre, contenu, auteur, commentaire, date_commentaire FROM commentaire INNER JOIN billet ON billet.id = commentaire.id WHERE commentaire.id_billet = billet.id';
-        $reqSQL='SELECT auteur, commentaire, date_commentaire FROM commentaire WHERE id_billet = '.$id.'';
+        $reqSQL='SELECT titre, contenu, auteur, commentaire, date_commentaire FROM commentaire INNER JOIN billet ON billet.id = commentaire.id_billet WHERE billet.id = '.$id.'';
+        // $reqSQL='SELECT auteur, commentaire, date_commentaire FROM commentaire WHERE id_billet = '.$id.'';
         $pdoStat = $this->_bdd->query($reqSQL);
         while ($donnees = $pdoStat ->fetch(PDO::FETCH_ASSOC)) {
             $commentaires[] = new Commentaire($donnees);
