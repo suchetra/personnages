@@ -9,8 +9,8 @@ require 'class_commentaire/' . $classe . '.php';
 
 $db = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
 
-$cM = new CommentaireManager($db);
+$commentaireManager = new CommentaireManager($db);
 
 // var_dump($pM->getList());
 
-var_dump($cM->getCommentaire(3));
+var_dump($commentaireManager->getCommentaire(3));

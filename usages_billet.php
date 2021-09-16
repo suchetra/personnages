@@ -10,9 +10,9 @@ require 'class_billet/' . $classe . '.php';
 
 $db = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
 
-$pM = new BilletManager($db);
+$billetManager = new BilletManager($db);
 
-var_dump($pM->getList());
+var_dump($billetManager->getList());
 $billet = new Billet([
 'titre' => 'Nouvelle version de Laravel',
 'contenu' => 'Elle est attendu pour Noël !!']);

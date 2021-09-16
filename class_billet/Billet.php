@@ -6,25 +6,28 @@ class Billet
     private $_titre;
     private $_contenu;
 
-    public function id(){ 
+    public function getId(){ 
         return $this->_id;
     }
-    public function titre(){ 
+    public function getTitre(){ 
         return $this->_titre;
     }
-    public function contenu(){ 
+    public function getContenu(){ 
         return $this->_contenu;
     }
     
 
     public function setId($id){
         // Cas particuliers : on impose la valeur de id à 0
+        // transtipage int
         if ($id < 0 or (int)$id == 0) {
             $id=0;
         }
         // Cas general
         $this->_id = $id;
     }
+
+
 
     public function setTitre($titre) {
         // Cas particuliers

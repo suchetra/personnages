@@ -135,6 +135,6 @@ $db = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
 
     // $bddaze = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
 
-$pM = new PersonnageManager($db);
+$personnageManager = new PersonnageManager($db);
 
-var_dump($pM->getList());
+var_dump($personnageManager->getList());

@@ -12,34 +12,6 @@ class Personnage
     // self represente la classe, on pourrait metre Personnage
     return self::$nbObjects;
     }
-
-//     public function __construct($force, $degats) {
-//     // etc.
-//     // on compte le nombre d'instances de la classe
-    
-// }
-    // public $_vie;
-
-    // private $force;
-    // // Déclarations des constantes en rapport avec la force.
-    // const FORCE_PETITE = 20;
-    // const FORCE_MOYENNE = 50;
-    // const FORCE_GRANDE = 80;
-
-    
-    // public $_force = 9999; // La force du personnage, par défaut 50
-    // public $_localisation = 9999; // Sa localisation
-    // public $_experience = 9999; // Son expérience
-    // public $_degats; // Ses dégâts
-
-    // public function __construct($_vie, $_force, $_localisation, $_experience, $_degats){
-    // $this->_vie = $_vie;
-    // $this->_force = $_force;
-    // $this->_localisation = $_localisation;
-    // $this->_experience = $_experience;
-    // $this->_degats = $_degats;
-    // self::$nbObjects++;
-    // }
     
     private $_id;
     private $_nom;
@@ -163,9 +135,9 @@ class Personnage
     
     // Une méthode qui déplacera le personnage (modifiera sa
     // localisation).
-    public function deplacer(){
-        $_localisation += 1;
-    }
+    // public function deplacer(){
+    //     $_localisation += 1;
+    // }
 
     // Une méthode qui frappera un personnage (suivant la force
     // qu'il a).

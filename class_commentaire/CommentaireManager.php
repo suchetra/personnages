@@ -9,18 +9,18 @@ class CommentaireManager
     $this->_bdd = $pdo;
     }
 
-    public function insertInto(Commentaire $commentaire) {
-        $reqSQL='INSERT INTO
-        personnage(id_billet, auteur, commentaire, date_commentaire)
-        VALUES(:id_billet, :auteur, :commentaire, :date_commentaire)';
+    // public function insertInto(Commentaire $commentaire) {
+    //     $reqSQL='INSERT INTO
+    //     personnage(id_billet, auteur, commentaire, date_commentaire)
+    //     VALUES(:id_billet, :auteur, :commentaire, :date_commentaire)';
     
-        $requete = $this->_bdd->prepare($reqSQL);
-        $requete->bindValue(':id_billet', $commentaire ->setId_billet());
-        $requete->bindValue(':auteur', $commentaire->setAuteur(), PDO::PARAM_INT);
-        $requete->bindValue(':commentaire', $commentaire->setCommentaire(), PDO::PARAM_INT);
-        $requete->bindValue(':date_commentaire', $commentaire->setDate_commentaire(), PDO::PARAM_INT);
-        $requete->execute();
-    }
+    //     $requete = $this->_bdd->prepare($reqSQL);
+    //     $requete->bindValue(':id_billet', $commentaire ->setId_billet());
+    //     $requete->bindValue(':auteur', $commentaire->setAuteur(), PDO::PARAM_INT);
+    //     $requete->bindValue(':commentaire', $commentaire->setCommentaire(), PDO::PARAM_INT);
+    //     $requete->bindValue(':date_commentaire', $commentaire->setDate_commentaire(), PDO::PARAM_INT);
+    //     $requete->execute();
+    // }
     
     public function getList(){
         $commentaires = [];

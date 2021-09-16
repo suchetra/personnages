@@ -9,17 +9,17 @@ class BilletManager
     $this->_bdd = $pdo;
     }
 
-    public function insertInto(Billet $billet) {
-        $reqSQL='INSERT INTO
-        billet(id, titre, contenu)
-        VALUES(:id, :titre, :contenu)';
+    // public function insertInto(Billet $billet) {
+    //     $reqSQL='INSERT INTO
+    //     billet(id, titre, contenu)
+    //     VALUES(:id, :titre, :contenu)';
     
-        $requete = $this->_bdd->prepare($reqSQL);
-        $requete->bindValue(':id', $billet ->setId());
-        $requete->bindValue(':titre', $billet->setTitre(), PDO::PARAM_INT);
-        $requete->bindValue(':contenu', $billet->setContenu(), PDO::PARAM_INT);
-        $requete->execute();
-    }
+    //     $requete = $this->_bdd->prepare($reqSQL);
+    //     // $requete->bindValue(':id', $billet ->setId());
+    //     $requete->bindValue(':titre', $billet->setTitre(), PDO::PARAM_INT);
+    //     $requete->bindValue(':contenu', $billet->setContenu(), PDO::PARAM_INT);
+    //     $requete->execute();
+    // }
     
     public function getList(){
         $billets = [];
