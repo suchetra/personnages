@@ -4,40 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Blog</title>
 </head>
     <body>
         <h1>Les billets du blog</h1>
 
         <?php
+        
+        // if(str_starts_with(Billet){
+            // require 'class_billet/' . $classe . '.php';
 
-        // On crée une pile d'autoload avec le spl_autoload
         spl_autoload_register('charge');
         // On crée une fonction pour faire les require de Classe
         function charge($classe){
-        
-        
-        // if()
-        // require 'class_billet/' . $classe . '.php';
-        require 'class_billet/' . $classe . '.php';
-        // require 'class_commentaire/' . $classe . '.php';
+        require $classe . '.php';
         }
+        // require 'EntityManager.php';
+        // require 'BilletManager.php';
+        // require 'CommentaireManager.php';
 
-        $db = new PDO('mysql:dbname=testhydra;host=localhost', 'nico', 'nico');
-
-        $billetManager = new BilletManager($db);
-        $commentaireManager = new CommentaireManager($db);
-
-        var_dump($billetManager->getList());
-        // $billet = new Billet([
-        // 'titre' => 'Nouvelle version de Laravel',
-        // 'contenu' => 'Elle est attendu pour Noël !!']);
-
-
+        $billetManager = new BilletManager();
+        // var_dump($billetManager->getBillets());
         
-        var_dump($commentaireManager->getCommentaire(3));
+        $commentaireManager = new CommentaireManager();
+        // var_dump($commentaireManager->getCommentaires());
 
-        var_dump($billet);
-    ?>
+        $commentaireManager = new CommentaireManager();
+        // var_dump($pM->getList());
+
+        // var_dump($commentaireManager->getCommentaireWhereBillet(3));
+
+        var_dump($commentaireManager->getCommentaireWhereBillet(3));
+
+        ?>
     </body>
 </html>
